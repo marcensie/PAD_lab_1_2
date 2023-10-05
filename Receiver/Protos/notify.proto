@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcApp";
+
+package GrpcApp;
+
+service Notifier {
+  rpc Notify (NotifyRequest) returns (NotifyReply);
+}
+
+message NotifyRequest {
+  string article = 1;
+  string publisher_name = 2;
+}
+
+message NotifyReply {
+  bool isSuccess = 1;
+}
